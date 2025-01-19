@@ -4,13 +4,13 @@ export const DateContainer = styled.div(
     () => css`
         flex: 1;
         background-color: #CCD3FF;
-        border: 4px dashed #7D4DCC;
+        border: 4px dashed #5577F2;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         border-radius: 0.8rem;
-        box-shadow: 0px 1px 4px #0004;
+        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
     `
 )
 

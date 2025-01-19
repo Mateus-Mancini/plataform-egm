@@ -12,7 +12,7 @@ const Sidebar = () => {
             <S.PagesContainer>
                 {pages.map((page, index) => (
                     <S.PageTag key={index} selected={selectedPageIndex === index} onClick={() => {setSelectedPageIndex(index)}}>
-                        <span className="material-symbols-outlined">
+                        <span className="material-symbols-rounded">
                             {page.icon}
                         </span>
                         {page.title}

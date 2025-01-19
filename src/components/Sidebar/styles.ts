@@ -15,14 +15,12 @@ export const SidebarContainer = styled.div(
         gap: 0.8rem;
         justify-items: center;
         height: fit-content;
-        box-shadow: 0px 1px 4px #0004;
+        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
     `
 )
 
 export const Title = styled.h1(
     () => css`
-        font-size: 3.6rem;
-        font-family: "League Spartan";
         font-weight: 600;
         color: #EFFCF9;
     `
@@ -46,14 +44,13 @@ export const PagesContainer = styled.div(
 
 export const PageTag = styled.div<IPageTag>(
     ({ selected }) => css`
-        background-color: ${selected ? '#7D4DCC' : '#7D4DCC33'};
+        background-color: ${selected ? '#5577F2' : '#5577F233'};
         padding: 1.6rem;
         border-radius: 3.2rem;
         font-size: 2rem;
         font-weight: 500;
-        font-family: "League Spartan";
         color: #EFFCF9;
-        transition: 0.25s;
+        transition: 0.25s cubic-bezier(.175,.885,.32,1.3);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -61,7 +58,7 @@ export const PageTag = styled.div<IPageTag>(
 
         &:hover {
             letter-spacing: 0.2rem;
-            background-color: ${selected ? '#7D4DCC' : '#7D4DCC66'};
+            background-color: ${selected ? '#5577F2' : '#5577F266'};
         }
 
         span {
