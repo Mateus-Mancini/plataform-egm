@@ -6,47 +6,54 @@ interface IPageTag {
 
 export const SidebarContainer = styled.div(
     () => css`
-        background-color: #323484;
-        padding: 2.4rem 0;
-        border-radius: 1.6rem;
+        height: calc(100vh - 2.4rem);        
+        width: fit-content;
+        background: linear-gradient(-135deg, #4550BA, #39429A);
+        padding: 4.8rem 1.6rem;
         overflow: hidden;
-        display: grid;
-        width: 100%;
-        gap: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
         justify-items: center;
-        height: fit-content;
-        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
+        box-shadow: 0 0 8px rgba(50, 52, 132, 0.1), inset 0 0 8px rgba(50, 52, 132, 0.1);
+
+        * {
+            height: fit-content;
+        }
     `
 )
 
 export const Title = styled.h1(
     () => css`
+        font-size: 4.2rem;
         font-weight: 600;
         color: #EFFCF9;
     `
 )
 
-export const DashedLine = styled.div(
+export const Date = styled.h1(
     () => css`
-        border-bottom: 4px dashed #E4E6F2;
-        width: 100%;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #EFFCF9;
+        margin-bottom: 2.4rem;
     `
 )
 
 export const PagesContainer = styled.div(
     () => css`
         padding: 1.6rem 0 0 0; 
-        width: 80%;
+        width: 100%;
         display: grid;
-        gap: 1.6rem;
+        gap: 2.4rem;
     `
 )
 
 export const PageTag = styled.div<IPageTag>(
     ({ selected }) => css`
-        background-color: ${selected ? '#5577F2' : '#5577F233'};
-        padding: 1.6rem;
-        border-radius: 3.2rem;
+        background-color: ${selected ? '#505DE0' : '#606AD1'};
+        padding: 1.2rem;
+        border-radius: 0.8rem;
         font-size: 2rem;
         font-weight: 500;
         color: #EFFCF9;
@@ -58,7 +65,7 @@ export const PageTag = styled.div<IPageTag>(
 
         &:hover {
             letter-spacing: 0.2rem;
-            background-color: ${selected ? '#5577F2' : '#5577F266'};
+            background-color: ${selected ? '#505DE0' : '#5863D8'};
         }
 
         span {

@@ -12,20 +12,42 @@ html {
 
 em {
   font-style: normal;
-  color: #5577F2;
+  color: #505DE0;
+
+  &::selection {
+    background-color: #505DE0;
+    color: #040D2F;
+  }
 }
 
 h1 {
   font-size: 3.6rem;
+
+  &::selection {
+    background-color: #505DE0;
+    color: #DEE0EE;
+  }
 }
 
 h2 {
   font-size: 3.2rem;
   font-weight: 600;
+  color: #040D2F;
+
+  &::selection {
+    background-color: #505DE0;
+    color: #DEE0EE;
+  }
 }
 
 p {
   font-size: 2.4rem;
+  color: #040D2F;
+
+  &::selection {
+    background-color: #505DE0;
+    color: #DEE0EE;
+  }
 }
 
 body {

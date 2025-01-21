@@ -7,17 +7,17 @@ interface IDropdownContainer {
 export const DropdownContainer = styled.div<IDropdownContainer>(
     ({ isOpen }) => css`
         flex: 1;
-        padding: 1.6rem;
-        background-color: #d8dcf9;
-        color: #8B8DBB;
+        padding: 1.2rem;
+        background-color: #DEE0EE;
+        color: #606AD1DE;
         font-size: 2.4rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        border-radius: 1.6rem;
+        border-radius: 0.4rem;
         min-width: 0;
-        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
+        box-shadow: 0 0 8px rgba(50, 52, 132, 0.1), inset 0 0 8px rgba(50, 52, 132, 0.1);
 
         span {
             transform: rotate(${!isOpen ? '180deg' : '0'});
@@ -31,24 +31,25 @@ export const Options = styled.div(
         top: 120%;
         left: 0;
         width: 100%;
-        background-color: #d8dcf9;
+        background-color: #DEE0EE;
         display: grid;
         gap: 0.8rem;
         padding: 1.6rem;
-        border-radius: 1.6rem;
+        border-radius: 0.8rem;
         max-height: 40rem;
         overflow-y: auto;
         scrollbar-width: thin;
-        scrollbar-width: thin;
-        scrollbar-color: #8B8DBB #d8dcf9;    
+        box-shadow: 0 0 8px rgba(50, 52, 132, 0.1), inset 0 0 8px rgba(50, 52, 132, 0.1);
+        scrollbar-color: #606AD1DE #DEE0EE;    
+        z-index: 1;
     `
 )
 
 export const Option = styled.div(
     () => css`
-        border-radius: 1.6rem;
-        color: #8B8DBB;
-        padding: 1.6rem;
+        border-radius: 0.8rem;
+        color: #606AD1DE;
+        padding: 1.2rem;
         cursor: pointer;
 
         overflow: hidden;
@@ -57,7 +58,7 @@ export const Option = styled.div(
         white-space: nowrap;
 
         &:hover {
-            background-color: #8B8DBB20;
+            background-color: #606AD122;
         }
     `
 )

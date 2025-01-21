@@ -29,13 +29,12 @@ export const AppContainer = styled.div(
 
 export const PageContainer = styled.div(
     () => css`
-        background-color: #E4E6F2;
+        background: linear-gradient(135deg, #E4E6F2, #BABFDE);
         width: calc(100vw - 2.4rem);
         height: calc(100vh - 2.4rem);
-        padding: 2.4rem;
-        border-radius: 0.4rem;
         display: flex;
-        gap: 2.4rem;
+        gap: 4.8rem;
+        padding-right: 4.8rem;
         overflow: hidden;
         box-sizing: border-box;
         position: relative;
@@ -57,73 +56,10 @@ export const PagesContainer = styled.div(
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+        padding-top: 10rem;
+        padding-bottom: 2.4rem;
         position: relative;
         min-width: 0;
-    `
-)
-
-export const DashedLine = styled.div(
-    () => css`
-        border-bottom: 4px dashed #323484;
-        width: 100%;
-    `
-)
-
-export const Filters = styled.div(
-    () => css`
-        display: flex;
-        gap: 2.4rem;
-        min-width: 0;
-    `
-)
-
-export const StudentsContainer = styled.div(
-    () => css`
-        flex: 1;
-        display: grid;
-        gap: 4.8rem;
-        grid-template-columns: repeat(5, 1fr);
-        overflow-y: auto;
-        overflow-x: hidden;
-        scrollbar-color: #323484 #E4E6F2;
-        padding-bottom: 2.4rem;
-        box-sizing: border-box;
-        max-width: 100%;
-        align-items: start;
-
-        &::after {
-            content: '';
-            position: absolute;
-            min-width: 100%;
-            height: 5%;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to bottom, #E4E6F200, #E4E6F2)
-        }
-    `
-)
-
-export const Student = styled.div(
-    () => css`
-        aspect-ratio: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #C1CBFF;
-        font-size: 1.8rem;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 0.4rem;
-        padding: 1.6rem;
-        box-sizing: border-box;
-        transition: padding 0.25s, border 0.25s;
-        border: 0 #323484 dashed;
-        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
-
-        &:hover {
-            border: 0.4rem #323484 dashed;
-            padding: 1.2rem;
-        }
     `
 )
 
@@ -134,13 +70,14 @@ export const SelectedStudentContainer = styled.div<ISelectedStudentContainerProp
         left: ${initialPosition.left - 10}px;
         width: ${initialPosition.width + 1}px;
         height: ${initialPosition.height + 2}px;
-        border: 0.4rem #323484 dashed;
+        border: 0.4rem #040D2F dashed;
+        color: #040D2F;
         border-radius: 0.4rem;
-        background-color: #C1CBFF;
+        background-color: #DEE0EE;
         animation: 1s ${closed ? 'close' :  'open'} both 0.2s;
         padding: 4.8rem;
         box-sizing: border-box;
-        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
+        box-shadow: 0 0 8px rgba(50, 52, 132, 0.1), inset 0 0 8px rgba(50, 52, 132, 0.1);
 
         @keyframes
         open {
@@ -150,7 +87,8 @@ export const SelectedStudentContainer = styled.div<ISelectedStudentContainerProp
                 transform: translate(-50%, -50%);
                 width: calc(100vw - 4.8rem);
                 height: calc(100vh - 4.8rem);
-                border: 0 #323484 dashed;
+                border: 0 #040D2F dashed;
+                border-radius: 0;
             }
         }
 
@@ -162,14 +100,17 @@ export const SelectedStudentContainer = styled.div<ISelectedStudentContainerProp
                 transform: translate(-50%, -50%);
                 width: calc(100vw - 4.8rem);
                 height: calc(100vh - 4.8rem);
-                border: 0 #323484 dashed;
+                border: 0 #040D2F dashed;
+                border-radius: 0;
             }
             to {
                 top: ${initialPosition.top - 10}px;
                 left: ${initialPosition.left - 10}px;
                 width: ${initialPosition.width}px;
                 height: ${initialPosition.height + 2}px;
-                border: 0 #323484 dashed;
+                border: 0 #040D2F dashed;
+                border-radius: 0.4rem;
+                box-shadow: inset 0 0 8px rgba(50, 52, 132, 0.1);
             }
         }
     `
@@ -235,7 +176,7 @@ export const CloseButton = styled.span<ISelectedStudentInfoProps>(
         font-weight: 600;
         cursor: pointer;
         transition: 1s cubic-bezier(.175,.885,.32,1.3);
-        color: #323484;
+        color: #040D2F;
         animation: 0.25s reveal-button both ${1.6 + 0.2 * index}s;
 
         ${closed && css`

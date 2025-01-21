@@ -10,7 +10,7 @@ export const DateContainer = styled.div(
         align-items: center;
         justify-content: center;
         border-radius: 0.8rem;
-        box-shadow: 0 0 #0000,0 0 #0000,inset 0 1px 4px 0 rgba(0, 0, 0, .05);
+        box-shadow: 0 0 8px rgba(50, 52, 132, 0.1), inset 0 0 8px rgba(50, 52, 132, 0.1);
     `
 )
 

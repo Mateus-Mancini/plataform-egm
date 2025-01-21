@@ -1,18 +1,17 @@
 import * as S from './styles'
-import { useState } from 'react';
 
-const Sidebar = () => {
-    const pages = [{title: 'Página Inicial', icon: 'home_work'}, {title: 'Carômetro', icon: 'badge'}, {title : 'Estatística', icon: 'monitoring'}, {title: 'Perfil', icon: 'account_circle'} , {title: 'Suporte', icon: 'support_agent'}]
-    const [selectedPageIndex, setSelectedPageIndex] = useState<number>(0)
+const Sidebar = ({ selectedPage, setSelectedPage } : any) => {
+    const pages = [{title: 'Página Inicial', icon: 'home_work'}, {title: 'Carômetro', icon: 'badge'}, {title: 'Relatórios', icon: 'lab_profile'}, {title : 'Estatística', icon: 'monitoring'}, {title: 'Logs', icon: 'description'}, {title: 'Configurações', icon: 'tune'}, {title: 'Suporte', icon: 'support_agent'}]
+    const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
     return (
         <S.SidebarContainer>
             <S.Title>Plataforma EGM</S.Title>
-            <S.DashedLine />
+            <S.Date>{new Date().getDate()} de {months[new Date().getMonth()]}, {new Date().getFullYear()}</S.Date>
             <S.PagesContainer>
                 {pages.map((page, index) => (
-                    <S.PageTag key={index} selected={selectedPageIndex === index} onClick={() => {setSelectedPageIndex(index)}}>
-                        <span className="material-symbols-rounded">
+                    <S.PageTag key={index} selected={selectedPage === index} onClick={() => {setSelectedPage(index)}}>
+                        <span className="material-symbols-outlined">
                             {page.icon}
                         </span>
                         {page.title}
